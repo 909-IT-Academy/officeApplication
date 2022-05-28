@@ -1,0 +1,10 @@
+/* fonts */
+@font-face {
+  font-family: circularStdBold;
+  src: url(../fonts/FontsFree-Net-CircularStd-Bold.ttf);
+}
+
+.error{
+  color:red;
+  font-size: 1em;
+}
