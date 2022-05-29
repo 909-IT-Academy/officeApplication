@@ -1,5 +1,5 @@
 <?php
-// Start the session
+// Start the session  dd
 session_start();
 ?>
 
