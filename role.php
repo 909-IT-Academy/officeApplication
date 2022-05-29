@@ -50,15 +50,7 @@ session_start();
 
                             </div>
                            
-                        <?php
-                            if (isset($_POST['submit'])) {
-                                if (!empty($_POST['role'])) {
-                                    $selected = $_POST['role'];
-                                    
-                                   $_SESSION["roleValue"]=$selected;
-                                } 
-                            }
-                            ?>
+                        
                         </form>
                         
 
