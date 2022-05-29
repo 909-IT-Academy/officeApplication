@@ -10,7 +10,7 @@ session_start();
                                    $_SESSION["roleValue"]=$selected;
                                 } 
                             }
-                            ?>
+                            ?> 
 <?php
 // Echo session variables that were set on previous page
 echo "this is homepage "; 
