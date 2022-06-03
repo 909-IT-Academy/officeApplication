@@ -4,15 +4,24 @@
   src: url(../fonts/FontsFree-Net-CircularStd-Bold.ttf);
 }
 
-.error{
-  color:red;
-  font-size: 15px;
-}
-
-#er_icon{
-  visibility:hidden;
-}
-
-.error_sign{
+.error {
   color: red;
+  font-size: 15px;
+  display: block;
+}
+
+#er_icon {
+  visibility: hidden;
+}
+
+.error_sign {
+  color: red;
+}
+
+#bargraph {
+  visibility: hidden;
+}
+
+#piechart {
+  visibility: hidden;
 }

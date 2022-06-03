@@ -21,39 +21,69 @@ $(document).ready(function () {
 
       messages: {
         email: {
-          required: "Please enter your email.",
-          email: "Please enter a valid email address.",
+          
+           required: "Please enter your email.",
+           email: "Please enter a valid email address.",
         },
 
         password: {
-          required: "Password is required.",
+          
+           required: "Password is required.",
         },
+
       },
 
       group: {
         username : {email , password}
       },
 
+      invalidHandler: function(event, validator) {
+        var errors = validator.numberOfInvalids();
+        if(errors > 1){
+          document.getElementById("error").innerHTML =  " Errors" ;
+
+        }else if(errors == 0){
+          document.getElementById("er_icon").style.visibility = "hidden";
+          document.getElementById("error").innerHTML =   "yp" ;
+         }
+        else{ 
+          document.getElementById("error").innerHTML =   "error" ;
+        }
+       
+
+       },
+    
+  
+       showErrors: function(errorMap, errorList) {
+        $("#summary").html("Your form contains "
+          + this.numberOfInvalids()
+          + " errors, see details below.");
+        this.defaultShowErrors();
+      },
+    
+
+
       errorPlacement: function (error, element) {
         error;
-        document.getElementById("error").innerHTML =   "Error/s" ;
-        document.getElementById("er_icon").style.visibility = "visible";
-        console.log("fuck u");
-        if (element.attr("name") == "email") {
+       
         
-          error.insertAfter("#error1");
+        console.log("fuck u");     
+          error.insertAfter("#error");
+         document.getElementById("er_icon").style.visibility = "visible";
+         
+         
        
       
-        } else if (element.attr("name") == "password") {
-         
-          error.insertAfter("#error2");
-        } else {
-          error.insertAfter(element);
-        }
+        
+        
       },
-
+   
       submitHandler: function (form) {
         console.log("test");
+        document.getElementById("er_icon").style.visibility = "hidden";
+        document.getElementById("error").innerHTML =   "" ;
+        console.log("test");
+      
       },
     });
 
@@ -74,3 +104,15 @@ $(document).ready(function () {
     );
   });
 });
+
+
+
+function showpie(){
+  document.getElementById("piechart").style.visibility = "visible";
+  document.getElementById("bargraph").style.visibility = "hidden";
+}
+
+function showbar(){
+  document.getElementById("piechart").style.visibility = "hidden";
+  document.getElementById("bargraph").style.visibility = "visible";
+}
