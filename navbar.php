@@ -1,3 +1,13 @@
+
+<style>
+    .navbar #navbarSupportedContent .navbar-nav a:hover,a:active{
+  color: #ea5f5f;
+}
+
+
+</style>
+
+
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">
