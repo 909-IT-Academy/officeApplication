@@ -84,9 +84,9 @@ class Employee {
             $address = $this->dbHandler->sanitize($this->address);
             $email = $this->dbHandler->sanitize($this->email);
             
-            if($id){
+            if($fname){
                 $stmt = $this->dbHandler->con->prepare("INSERT INTO `employee`(`fname`, `lname`, `mobile`, `address`, `email`) VALUES (?,?,?,?,?)");
-                $stmt->bind_param("sssss", $id, $fname, $lname, $mobile, $address, $email);
+                $stmt->bind_param("sssss", $fname, $lname, $mobile, $address, $email);
                 
                 if($stmt->execute()){
                     $this->results['mode'] = "new";
