@@ -6,7 +6,7 @@ use officeApp\Model\Employee;
 include('Model/Employee.php');
 
 $employee = new Employee();
-// $employee->save();
+
 
 ?>
 <!DOCTYPE html>
