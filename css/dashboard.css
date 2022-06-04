@@ -26,9 +26,9 @@ th, td {
 }
 
 
-.footer{
-  background-color: rgba(237, 93, 93,0.7);
-  
+footer{
+  background-color: rgba(233, 159, 159, 0.7);
+  border-top: black;
     bottom: 0%;
     left: 0;
   width:100vw;

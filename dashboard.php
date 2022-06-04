@@ -38,32 +38,7 @@ echo "Your name:"."(". $_SESSION["roleValue"] .")" .".";
 
 <body>
     <div class="container-fluid " style="min-height:100%;">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">
-                    <img src="img/909-logo.png" alt="" width="120" height="45" class="d-inline-block align-text-top"></a>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Dashboard</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Roles</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Employees</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Clients</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Timesheet</a>
-                        </li>
-                    </ul>
-                    <a href="" class="d-flex">Logout</a>
-                </div>
-            </div>
-        </nav>
+        <?php include "navbar.php" ?>
 
         <div class="container mt-5 ">
             <div class="row ">
@@ -153,22 +128,7 @@ echo "Your name:"."(". $_SESSION["roleValue"] .")" .".";
     <script src="lib/jquery.form.js"></script>
 
 </body>
-<div class="container-fluid mt-4">
-    <div class="footer">
-        <div class="row">
-            <div class="col-md-8 d-flex flex-column align-items-center justify-content-center">
-                &copy; 2022 Copyright reserved to 909IT Academy
-            </div>
-            <div class="col-md-1 d-flex flex-column justify-content-center align-items-center">
-                User Manual
-
-            </div>
-            <div class="col-md-1 d-flex flex-column justify-content-center align-items-center">
-                Help Desk
-            </div>
-        </div>
-    </div>
-</div>
+<?php include "footer.php" ?>
 
 
 </html>
