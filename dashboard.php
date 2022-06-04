@@ -41,7 +41,7 @@ echo "Your name:"."(". $_SESSION["roleValue"] .")" .".";
         <?php include "navbar.php" ?>
 
         <div class="container mt-5 ">
-            <div class="row ">
+            <div class="row d-flex flex-md-column flex-lg-row">
                 <div class="col d-flex flex-column align-items-center justify-content-center">
                     <div class="row">
                         <div class="col-3 d-flex flex-column justify-content-center">
