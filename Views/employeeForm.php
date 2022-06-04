@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $errors[] = "Item Id Field is Required";
   } else {
     $employee_id = $employee->dbHandler->sanitize($_POST["employee_id"]);
-    $employee->set_id($employee_id);    
+    $employee->set_id($employee_id);
   }
 
   // set the item id to show old value in the form
@@ -28,7 +28,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   } else {
     $employee_first_name = $employee->dbHandler->sanitize($_POST["employee_first_name"]);
     $employee->set_fname($employee_first_name);
-    
   }
 
   // set the item id to show old value in the form
@@ -36,7 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $errors[] = "Last Name Field is Required";
   } else {
     $employee_last_name = $employee->dbHandler->sanitize($_POST["employee_last_name"]);
-    $employee->set_lname($employee_last_name);    
+    $employee->set_lname($employee_last_name);
   }
 
   // set the item id to show old value in the form
@@ -45,7 +44,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   } else {
     $employee_mobile = $employee->dbHandler->sanitize($_POST["employee_mobile"]);
     $employee->set_mobile($employee_mobile);
-    
   }
 
   // set the item id to show old value in the form
@@ -54,7 +52,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   } else {
     $employee_address = $employee->dbHandler->sanitize($_POST["employee_address"]);
     $employee->set_address($employee_address);
-    
   }
 
   // set the item id to show old value in the form
@@ -63,25 +60,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   } else {
     $employee_email = $employee->dbHandler->sanitize($_POST["employee_email"]);
     $employee->set_id($employee_email);
-    
   }
 
 
   // submit the form
-  if(empty($errors)) {
-    echo "form submitted";    
-    $employee_id = $_POST["employee_id"];    
-    $employee_first_name = $_POST["employee_first_name"];    
-    $employee_last_name = $_POST["employee_last_name"];    
-    $employee_mobile = $_POST["employee_mobile"];    
-    $employee_address = $_POST["employee_address"];    
-    $employee_email = $_POST["employee_email"];   
+  if (empty($errors)) {
+    echo "form submitted";
+    $employee_id = $_POST["employee_id"];
+    $employee_first_name = $_POST["employee_first_name"];
+    $employee_last_name = $_POST["employee_last_name"];
+    $employee_mobile = $_POST["employee_mobile"];
+    $employee_address = $_POST["employee_address"];
+    $employee_email = $_POST["employee_email"];
 
     $employee = new Employee(null, $employee_first_name, $employee_last_name, $employee_mobile, $employee_address, $employee_email);
     $employee->save();
-
   }
-
 }
 
 if (!empty($errors)) {

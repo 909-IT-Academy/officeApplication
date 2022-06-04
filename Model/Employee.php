@@ -1,4 +1,4 @@
-<?php
+"<?php
 namespace officeApp\Model;
 
 use officeApp\Database\DbHandler;
@@ -15,7 +15,7 @@ class Employee {
     public $results = [];
 
     public function __construct($id = "", $fname = "", $lname="", $mobile = "", $address = "", $email = "")
-    {
+   {
         $this->id = $id;
         $this->fname = $fname;
         $this->lname = $lname;
