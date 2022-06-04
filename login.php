@@ -2,6 +2,12 @@
 Bootstrap 5.1
 Developer : Dibesh Sharma
 -->
+
+<?php
+// Start the session  dd
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,7 +29,7 @@ Developer : Dibesh Sharma
         <div class="row" style="min-height:100vh">
             <div class="d-flex justify-content-center align-items-center">
                 <div class="p-2 bd-highlight">
-                    <form name="loginForm">
+                    <form name="loginForm" action="role.php" method="POST">
                         <div class="mb-3">
                         <div class="mb-3 error">
                             <div id="error"></div>

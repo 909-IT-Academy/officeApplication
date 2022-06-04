@@ -34,14 +34,14 @@ session_start();
                     </div>
 
                     <div class="row justify-content-center align-items-center ">
-                        <form action="homepage.php" method="POST">
+                        <form action="dashboard.php" method="POST">
 
                             <div class="row ">
                                 <select name="role" id="role" onchange="changeFunc();">
                                     <option value="" disabled selected>Choose option</option>
-                                    <option value="admin">Admin</option>
-                                    <option value="account">Account</option>
-                                    <option value="user">User</option>
+                                    <option value="Admin">Admin</option>
+                                    <option value="Account">Account</option>
+                                    <option value="User">User</option>
                                 </select>
 
                             </div>
