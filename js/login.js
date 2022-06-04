@@ -8,57 +8,69 @@ $(document).ready(function () {
       rules: {
         // The key name on the left side is the name attribute
         // of an input field. Validation rules are defined
-        // on the right side       
+        // on the right side
 
-        'email': {
+        email: {
           required: true,
           email: true,
         },
-        'password': {
+        password: {
           required: true,
-        }
-      },
-
-      groups: {
-        username: "email password",
+        },
       },
 
       messages: {
-
-       'ememailHelp': {
-          required: 'Please enter your email.',
-          email: 'Please enter a valid email address.',
-        },
-        'password': {
-          required: "This is required."
+        email: {
+          required: "Please enter your email.",
+          email: "Please enter a valid email address.",
         },
 
+        password: {
+          required: "Password is required.",
+        },
       },
+
+      group: {
+        username : {email , password}
+      },
+
       errorPlacement: function (error, element) {
-        if (element.attr("name") == "email" || element.attr("name") == "password") {
-          error.insertAfter("#error");
+        error;
+        document.getElementById("error").innerHTML =   "Error/s" ;
+        document.getElementById("er_icon").style.visibility = "visible";
+        console.log("fuck u");
+        if (element.attr("name") == "email") {
+        
+          error.insertAfter("#error1");
+       
+      
+        } else if (element.attr("name") == "password") {
+         
+          error.insertAfter("#error2");
         } else {
           error.insertAfter(element);
         }
       },
 
       submitHandler: function (form) {
-
         console.log("test");
-
-
       },
-
     });
 
-    jQuery.validator.addMethod('selectcheck', function (value) {
-      return (value != '0');
-    }, "Value required");
+    jQuery.validator.addMethod(
+      "selectcheck",
+      function (value) {
+        return value != "0";
+      },
+      "Value required"
+    );
 
-    jQuery.validator.addMethod("emptyCheck", function (value) {
-      return ($.trim(value) != "");
-    }, "Space are not allowed");
-
+    jQuery.validator.addMethod(
+      "emptyCheck",
+      function (value) {
+        return $.trim(value) != "";
+      },
+      "Space are not allowed"
+    );
   });
-
-})
+});
