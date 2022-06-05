@@ -1,4 +1,4 @@
-"<?php
+<?php
 namespace officeApp\Model;
 
 use officeApp\Database\DbHandler;
