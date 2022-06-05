@@ -12,9 +12,9 @@ class Client {
 
     public function __construct($clientName = "", $clientContact="", $clientAddress="" )
     {
-$this->clientName = $clientName;
-$this->clientContact = $clientContact;
-$this->clientAddress = $clientAddress;
+        $this->clientName = $clientName;
+        $this->clientContact = $clientContact;
+        $this->clientAddress = $clientAddress;
     }
     
     public function get_clientName(){
@@ -30,6 +30,3 @@ $this->clientAddress = $clientAddress;
     } 
         
     }
-
-
-?>
