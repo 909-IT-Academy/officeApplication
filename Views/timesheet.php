@@ -70,7 +70,7 @@
             </div>
         </div>
         <div class="m-5  d-flex flex-row ">
-                <img src="images/pie.png" alt="" class="m-5" id="piechart" width="200px" height="200px">
-                <img src="images/barchart.jpg" alt="" class="m-5" id="bargraph" width="400px" height="200px">
+                <img src="img/pie.png" alt="" class="m-5" id="piechart" width="200px" height="200px">
+                <img src="img/barchart.jpg" alt="" class="m-5" id="bargraph" width="400px" height="200px">
         </div>
     </div>
