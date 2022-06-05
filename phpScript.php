@@ -4,14 +4,15 @@ namespace officeApp;
 use officeApp\Model\Employee;
 include('Model/Employee.php');
 
-$employee = new Employee(null,"a","b","c","d","e@g");
+$employee = new Employee();
+$mode = $employee->set_mode("new");
 $employee_id = $employee->get_id();
 $employee_first_name = $employee->get_fname();
 $employee_last_name  = $employee->get_lname();
 $employee_mobile = $employee->get_mobile();
 $employee_address = $employee->get_address();
 $employee_email = $employee->get_email();
-// $mode = $employee->get_mode();
+$mode = $employee->get_mode();
 
 $errors = [];
 
@@ -47,8 +48,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $errors[] = "Mobile Field is Required";
   } else {
     $employee_mobile = $employee->dbHandler->sanitize($_POST["employee_mobile"]);
-    $employee->set_mobile($employee_mobile);
-    
+    $employee->set_mobile($employee_mobile);    
   }
 
   // set the item id to show old value in the form
@@ -56,8 +56,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $errors[] = "Address Field is Required";
   } else {
     $employee_address = $employee->dbHandler->sanitize($_POST["employee_address"]);
-    $employee->set_address($employee_address);
-    
+    $employee->set_address($employee_address);    
   }
 
   // set the item id to show old value in the form
@@ -65,14 +64,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $errors[] = "Email Field is Required";
   } else {
     $employee_email = $employee->dbHandler->sanitize($_POST["employee_email"]);
-    $employee->set_id($employee_email);
-    
+    $employee->set_id($employee_email);    
   }
 
-
   // submit the form
-  if(empty($errors)) {
-    echo "form submitted";    
+  if(empty($errors)) {    
     $employee_id = $_POST["employee_id"];    
     $employee_first_name = $_POST["employee_first_name"];    
     $employee_last_name = $_POST["employee_last_name"];    
@@ -82,24 +78,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $employee = new Employee(null, $employee_first_name, $employee_last_name, $employee_mobile, $employee_address, $employee_email);
     $employee->save();
-
   }
-
-}
-
-if (!empty($errors)) {
-  echo "<ul>";
-  foreach ($errors as $error) {
-    echo "<li>" . $error . "</li>";
-  }
-  echo "</ul>";
-}
-
-if (!empty($employee->results)) {
-  echo "<ul>";
-  foreach ($errors as $error) {
-    echo "<li>" . $error . "</li>";
-  }
-  echo "</ul>";
 }
 ?>
