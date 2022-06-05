@@ -25,3 +25,12 @@
 #piechart {
   visibility: hidden;
 }
+.error{
+  color:red;
+  font-size: 1em;
+}
+
+#time{
+  width: 60px;
+  font-size:20px;
+}
