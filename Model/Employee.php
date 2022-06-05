@@ -49,6 +49,10 @@ class Employee {
         $this->email = $email;
     }
 
+    public function set_mode($mode){
+        $this->mode = $mode;
+    }
+
     public function get_id(){
         return $this->id;
     }
@@ -73,26 +77,34 @@ class Employee {
         return $this->email;
     }
 
+    public function get_mode(){
+        return $this->mode;
+    }
+
     // save the data to the employee table
     public function save($id="null")
     {
-        if($this->dbHandler->results['status'] == "success"){
-            $id = $this->dbHandler->sanitize($this->id);
-            $fname = $this->dbHandler->sanitize($this->fname);
-            $lname = $this->dbHandler->sanitize($this->lname);
-            $mobile = $this->dbHandler->sanitize($this->mobile);
-            $address = $this->dbHandler->sanitize($this->address);
-            $email = $this->dbHandler->sanitize($this->email);
+        // check if db connection is established
+        // assign sanitized form values to the fields
+        if($this->dbHandler->results['status'] == "success"){ 
+            $id = $this->id;
+            $fname = $this->fname;
+            $lname = $this->lname;
+            $mobile = $this->mobile;
+            $address = $this->address;
+            $email = $this->email;
             
-            if($id){
+            if($fname){ // if $fname has some value
+
+                // To avoid the sql injection, we bind the params
                 $stmt = $this->dbHandler->con->prepare("INSERT INTO `employee`(`fname`, `lname`, `mobile`, `address`, `email`) VALUES (?,?,?,?,?)");
-                $stmt->bind_param("sssss", $id, $fname, $lname, $mobile, $address, $email);
+                $stmt->bind_param("sssss", $fname, $lname, $mobile, $address, $email);
                 
-                if($stmt->execute()){
+                if($stmt->execute()){ // true
                     $this->results['mode'] = "new";
                     $this->results['status'] = "success";
                     $this->results['message'] = "New Data inserted successfully.";
-                }else{
+                }else{ // false
                     $this->results['mode'] = "new";
                     $this->results['status'] = "error";
                     $this->results['message']  = $stmt->error;

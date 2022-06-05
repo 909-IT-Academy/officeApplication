@@ -1,14 +1,4 @@
-<?php 
-namespace officeApp;
-
-use officeApp\Model\Employee;
-
-include('Model/Employee.php');
-
-$employee = new Employee();
-
-
-?>
+<?php include('phpScript.php') ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
