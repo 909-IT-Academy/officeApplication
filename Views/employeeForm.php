@@ -1,6 +1,15 @@
+<?php  
+  $employee_id = $employee->get_id();
+  $employee_first_name = $employee->get_fname();
+  $employee_last_name  = $employee->get_lname();
+  $employee_mobile = $employee->get_mobile();
+  $employee_address = $employee->get_address();
+  $employee_email = $employee->get_email();
+  $mode = $employee->get_mode();
+?>
 <div class="container">
   <div class="row">
-    <?php include('messageDiv.php'); ?>
+  <?php include('views/messageDiv.php'); ?>
   </div>
   <div class="row">
     <div class="col-md-6 col-md-2-offset">
@@ -44,7 +53,6 @@
       </div>
       </form>
     </div>
-
   </div>
 </div>
 </div>

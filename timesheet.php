@@ -17,6 +17,6 @@
 </head>
 <body>
     <?php include('views/navbar.php') ?>
-    <?php include('views/employeeForm.php') ?>
+    <?php include('views/timesheet.php') ?>
 </body>
 </html>
