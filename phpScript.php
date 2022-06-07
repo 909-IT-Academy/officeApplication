@@ -78,6 +78,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $employee = new Employee(null, $employee_first_name, $employee_last_name, $employee_mobile, $employee_address, $employee_email);
     $employee->save();
+    
+    $employee_id = "";    
+         $employee_first_name = "";    
+            $employee_last_name = "";    
+            $employee_mobile = "";    
+            $employee_address = "";    
+            $employee_email = ""; 
+
   }
 }
 ?>
