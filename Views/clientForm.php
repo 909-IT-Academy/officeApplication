@@ -14,7 +14,9 @@
                     <label for="client_Address" class="form-label">Full Address</label>
                     <input type="text" class="form-control" name="client_Address" placeholder="Client Address" value="">
                 </div>
+                <div class="d-flex justify-content-center align-items-center">
                 <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
             </form>
         </div>
     </div>

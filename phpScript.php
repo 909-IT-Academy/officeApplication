@@ -5,18 +5,11 @@ use officeApp\Model\Employee;
 include('Model/Employee.php');
 
 $employee = new Employee();
-$mode = $employee->set_mode("new");
-$employee_id = $employee->get_id();
-$employee_first_name = $employee->get_fname();
-$employee_last_name  = $employee->get_lname();
-$employee_mobile = $employee->get_mobile();
-$employee_address = $employee->get_address();
-$employee_email = $employee->get_email();
-$mode = $employee->get_mode();
+// $mode = $employee->set_mode("new");
 
 $errors = [];
 
-if ($_SERVER["REQUEST_METHOD"] == "POST" ) {
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   // set the item id to show old value in the form
   if (empty($_POST["employee_id"])) {
@@ -76,20 +69,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" ) {
     $employee_address = $_POST["employee_address"];    
     $employee_email = $_POST["employee_email"];   
 
-    $employee = new Employee(null, $employee_first_name , $employee_last_name, $employee_mobile, $employee_address, $employee_email);
-    $employee->save();
-
-
-    // $employee_first_name=false;
-    // $employee_id=false;
-    // $employee_last_name=false;
-    // $employee_mobile=false;
-    // $employee_address=null;
-    // $employee_email=null;
-    
-
+    $employee = new Employee(null, $employee_first_name, $employee_last_name, $employee_mobile, $employee_address, $employee_email);
+    $employee->save();    
   }
 }
-
-
 ?>

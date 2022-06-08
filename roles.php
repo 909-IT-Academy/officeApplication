@@ -1,3 +1,4 @@
+<?php include('phpScript.php') ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,8 +16,7 @@
     <script src="https://kit.fontawesome.com/70c966dfe1.js" crossorigin="anonymous"></script>    
 </head>
 <body>
-<?php include('navbar.php') ?>
-    <?php include('views/clientForm.php') ?>
-    <?php include('footer.php') ?>
+    <?php include('views/navbar.php') ?>
+    <?php include('views/roles.php') ?>
 </body>
 </html>

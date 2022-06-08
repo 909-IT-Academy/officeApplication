@@ -1,15 +1,24 @@
+<?php  
+  $employee_id = $employee->get_id();
+  $employee_first_name = $employee->get_fname();
+  $employee_last_name  = $employee->get_lname();
+  $employee_mobile = $employee->get_mobile();
+  $employee_address = $employee->get_address();
+  $employee_email = $employee->get_email();
+  // $mode = $employee->get_mode();
+?>
 <div class="container">
   <div class="row">
-    <?php include('messageDiv.php'); ?>
+  <?php include('views/messageDiv.php'); ?>
   </div>
   <div class="row">
     <div class="col-md-6 col-md-2-offset">
       <div class="row">
         <form action="" method="post">
-          <div class="mb-3">
+          <!-- <div class="mb-3">
             <label for="mode" class="form-label">Mode</label>
             <input type="text" class="form-control" name="mode" value="<?php echo $mode; ?>">
-          </div>
+          </div> -->
           <div class="mb-3">
             <label for="employee_id" class="form-label">Id</label>
             <input type="text" class="form-control" name="employee_id" value="<?php echo $employee_id; ?>">
@@ -44,6 +53,5 @@
       </div>
       </form>
     </div>
-
   </div>
 </div>
