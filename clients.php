@@ -1,7 +1,6 @@
 <?php include('phpScript.php') ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,10 +18,8 @@
 <body>
     <?php include('views/navbar.php') ?>
     <div class="container">
-    <?php include('views/dashboard.php') ?>
+    <?php include('views/clients.php') ?>
     </div>
     <?php include('views/footer.php') ?>
-    
-    
 </body>
 </html>

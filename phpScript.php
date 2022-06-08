@@ -6,13 +6,6 @@ include('Model/Employee.php');
 
 $employee = new Employee();
 $mode = $employee->set_mode("new");
-$employee_id = $employee->get_id();
-$employee_first_name = $employee->get_fname();
-$employee_last_name  = $employee->get_lname();
-$employee_mobile = $employee->get_mobile();
-$employee_address = $employee->get_address();
-$employee_email = $employee->get_email();
-$mode = $employee->get_mode();
 
 $errors = [];
 
