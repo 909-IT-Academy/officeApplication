@@ -1,5 +1,5 @@
-<form action="" method="post">
-    <div class="mb-3 col-sm-7">
+<form action="" method="post" class="px-5 py-2">
+    <div class="mb-3 mt-2 col-sm-7">
         <label for="role_Name" class="form-label">Client Name</label>
         <input type="text" class="form-control" name="role_Name" value="" placeholder="Client First Name">
     </div>
@@ -11,7 +11,10 @@
         <label for="client_Address" class="form-label">Full Address</label>
         <input type="text" class="form-control" name="client_Address" placeholder="Client Address" value="">
     </div>
-    <div class="d-flex justify-content-center align-items-center">
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+    
+    
+
+
 </form>

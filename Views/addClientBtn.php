@@ -1,1 +1,1 @@
-<div class="container mt-2"><button type="button" class="addPersonBtn btn btn-primary"> Add a Client </button> </div>
+<button type="button" class="addPersonBtn btn btn-primary" onclick="openForm()"> Add a Client </button>
