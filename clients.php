@@ -1,6 +1,3 @@
-<?php include('phpScript.php') ?>
-<!DOCTYPE html>
-<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,14 +10,20 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="lib/jquery.form.js"></script>
     <script src="dist/jquery.validate.js"></script>
-    <script src="https://kit.fontawesome.com/70c966dfe1.js" crossorigin="anonymous"></script>    
+    <script src="https://kit.fontawesome.com/70c966dfe1.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
     <?php include('views/navbar.php') ?>
     <?php include('views/addClientBtn.php') ?>
-    <div class="clientForm">
-    <?php include('views/clientForm.php') ?>
+    <div class=" container clientForm ">
+        <?php include('views/clientForm.php') ?>
     </div>
-    <?php include('views/footer.php') ?>
+
+    <div class="container">
+        <?php include('views/clientTable.php') ?>
+    </div>
+
 </body>
+
 </html>
