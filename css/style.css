@@ -6,14 +6,13 @@
 
 .error{
   color:red;
-  font-size: 15px;
+  font-size: 1em;
 }
 
-#er_icon{
-  visibility:hidden;
+.clientForm{
+  
+  border: 2px solid black;
+  width: 40%;
+  padding: 2px;
+  margin-bottom: 2px;
 }
-
-.error_sign{
-  color: red;
-}
-

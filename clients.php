@@ -18,7 +18,9 @@
 <body>
     <?php include('views/navbar.php') ?>
     <?php include('views/addClientBtn.php') ?>
+    <div class="clientForm">
     <?php include('views/clientForm.php') ?>
+    </div>
     <?php include('views/footer.php') ?>
 </body>
 </html>
