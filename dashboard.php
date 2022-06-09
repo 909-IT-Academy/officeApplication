@@ -18,5 +18,6 @@
 <body>
     <?php include('views/navbar.php') ?>
     <?php include('views/dashboard.php') ?>
+    <?php include('views/footer.php') ?>
 </body>
 </html>
