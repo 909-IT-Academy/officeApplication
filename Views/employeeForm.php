@@ -11,10 +11,12 @@ $employee_email = $employee->get_email();
   <?php include('views/messageDiv.php'); ?>
 </div>
 <form action="" method="post" class="row g-3 mt-2 p-4">
-  <p> NEW EMPLOYEE FORM </p>
-  <div class="col-md-3">
-    <label for="employee_id" class="form-label">Id</label>
-    <input type="text" class="form-control" name="employee_id" value="<?php echo $employee_id; ?>">
+  <strong class="pb-2"> NEW EMPLOYEE FORM </strong>
+  <div>
+    <div class="col-md-3">
+      <label for="employee_id" class="form-label">Id</label>
+      <input type="text" class="form-control" name="employee_id" value="<?php echo $employee_id; ?>">
+    </div>
   </div>
   <div class="col-md-6">
     <label class="form-label">First Name</label>
@@ -36,7 +38,7 @@ $employee_email = $employee->get_email();
     <label class="form-label">Phone Number</label>
     <input type="tel" class="form-control" name="employee_mobile" placeholder="Mobile" value="<?php echo $employee_mobile; ?>">
   </div>
-  <div> 
+  <div>
     <strong> Choose your role </strong> </br>
     <div class="form-check form-check-inline pt-2">
       <input class="form-check-input" type="checkbox" id="admin" value="Admin">

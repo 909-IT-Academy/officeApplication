@@ -15,12 +15,16 @@
 
 <body>
     <?php include('views/navbar.php') ?>
-    <?php include('views/addClientBtn.php') ?>
-    <div class=" container clientForm ">
+
+    <div class="container mt-5 w-50">
+        <?php include('views/addClientBtn.php') ?>
+    </div>
+    
+    <div class="container w-50 border border-2 clientForm mt-1  d-flex justify-content-center">
         <?php include('views/clientForm.php') ?>
     </div>
 
-    <div class="container">
+    <div class="container mt-3">
         <?php include('views/clientTable.php') ?>
     </div>
 

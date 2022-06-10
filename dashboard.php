@@ -17,7 +17,10 @@
 </head>
 <body>
     <?php include('views/navbar.php') ?>
+    <div class="container">
     <?php include('views/dashboard.php') ?>
+
+    </div>
     <?php include('views/footer.php') ?>
 </body>
 </html>

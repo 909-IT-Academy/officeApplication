@@ -21,7 +21,7 @@
 <div class="container w-50 border border-2 mt-5 ">
 <?php include('views/employeeForm.php') ?>
 </div>
-<div class="container">
+<div class="container mt-3">
 <?php include('views/employeeTable.php') ?>
 </div>
     

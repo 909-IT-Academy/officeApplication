@@ -23,7 +23,22 @@
                     <a class="nav-link" href="timesheet.php">Timesheet</a>
                 </li>
             </ul>
-            <a href="" class="d-flex">Logout</a>
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <div class="nav-item mb-2 pt-2"> <i class="fa-solid fa-user"></i> </div>
+
+                <li class="nav-item dropdown">
+
+                    <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Nabin Karki (admin)
+                    </a>
+                    <ul class="dropdown-menu ms-auto" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item ms-auto " href="#">Profile</a></li>
+                        <li><a class="dropdown-item ms-auto" href="#">Logout</a></li>
+
+                    </ul>
+                </li>
+            </ul>
+
         </div>
     </div>
 </nav>
