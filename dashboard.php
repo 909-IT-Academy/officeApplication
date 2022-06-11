@@ -1,6 +1,7 @@
 <?php include('phpScript.php') ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,14 +17,12 @@
     <script src="https://kit.fontawesome.com/70c966dfe1.js" crossorigin="anonymous"></script>    
 </head>
 <body>
-<<<<<<< HEAD
-    <?php include('views/employeeForm.php') ?>
-=======
     <?php include('views/navbar.php') ?>
     <div class="container">
-    <?php include('views/employeeForm.php') ?>
+    <?php include('views/dashboard.php') ?>
     </div>
     <?php include('views/footer.php') ?>
->>>>>>> 088a2119c53291925294729ac0efba0003862045
+    
+    
 </body>
 </html>

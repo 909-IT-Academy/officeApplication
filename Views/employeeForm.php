@@ -1,6 +1,21 @@
+<<<<<<< HEAD
 <div class="container">
   <div class="row">
     <?php include('messageDiv.php'); ?>
+=======
+<?php  
+  $employee_id = $employee->get_id();
+  $employee_first_name = $employee->get_fname();
+  $employee_last_name  = $employee->get_lname();
+  $employee_mobile = $employee->get_mobile();
+  $employee_address = $employee->get_address();
+  $employee_email = $employee->get_email();
+  $mode = $employee->get_mode();
+?>
+
+  <div class="row">
+  <?php include('views/messageDiv.php'); ?>
+>>>>>>> 088a2119c53291925294729ac0efba0003862045
   </div>
   <div class="row">
     <div class="col-md-6 col-md-2-offset">
@@ -44,7 +59,12 @@
       </div>
       </form>
     </div>
+<<<<<<< HEAD
 
   </div>
 </div>
 </div>
+=======
+  </div>
+</div>
+>>>>>>> 088a2119c53291925294729ac0efba0003862045

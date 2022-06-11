@@ -110,8 +110,16 @@ class Employee {
                     $this->results['message']  = $stmt->error;
                 }
             } 
+<<<<<<< HEAD
 
         } 
+=======
+            
+
+
+        } 
+        
+>>>>>>> 088a2119c53291925294729ac0efba0003862045
     }
 
     // get all the records from the employee table
