@@ -6,7 +6,6 @@ include('Model/Employee.php');
 
 $employee = new Employee();
 $mode = $employee->set_mode("new");
-<<<<<<< HEAD
 $employee_id = $employee->get_id();
 $employee_first_name = $employee->get_fname();
 $employee_last_name  = $employee->get_lname();
@@ -14,8 +13,6 @@ $employee_mobile = $employee->get_mobile();
 $employee_address = $employee->get_address();
 $employee_email = $employee->get_email();
 $mode = $employee->get_mode();
-=======
->>>>>>> 088a2119c53291925294729ac0efba0003862045
 
 $errors = [];
 
@@ -81,8 +78,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $employee = new Employee(null, $employee_first_name, $employee_last_name, $employee_mobile, $employee_address, $employee_email);
     $employee->save();
-<<<<<<< HEAD
-=======
     
     $employee_id = "";    
          $employee_first_name = "";    
@@ -91,7 +86,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $employee_address = "";    
             $employee_email = ""; 
 
->>>>>>> 088a2119c53291925294729ac0efba0003862045
   }
 }
 ?>
