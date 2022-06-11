@@ -34,8 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $errors['message'][]  = "First Name Field is Required";
   } else {
     $employee_first_name = $employee->dbHandler->sanitize($_POST["employee_first_name"]);
-    $employee->set_fname($employee_first_name);
-    
+    $employee->set_fname($employee_first_name);    
   }
 
   // set the item id to show old value in the form
