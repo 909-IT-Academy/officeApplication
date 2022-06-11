@@ -126,25 +126,29 @@ class Employee {
                 if($stmt->execute()){ // true
                     $this->results['mode'] = "new";
                     $this->results['status'] = "success";
-                    $this->results['message'] = "New Data inserted successfully.";
-
-                    foreach ($this->roles as $role) {
-                        $stmtRole = $this->dbHandler->con->prepare("INSERT INTO `employee_role`(`employee_id`,`role_id `) VALUES (?,?)");
-                        $stmtRole->bind_param("ss", $this->employee_id, $role);
-                        if($stmtRole->execute()){
-                            $this->results['mode'] = "new";
-                            $this->results['status'] = "success";
-                            $this->results['message'] = "New Role inserted successfully.";
-                        } else {
-                            $this->results['mode'] = "new";
-                            $this->results['status'] = "error";
-                            $this->results['message'] = $stmtRole->error;
-                        }
-                    }
+                    $this->results['message'] = "New Employee Data inserted successfully.";
+                    $stmt->store_result();                    
                 }else{ // false
                     $this->results['mode'] = "new";
                     $this->results['status'] = "error";
-                    $this->results['message']  = $stmt->error;
+                    $this->results['message'][]  = $stmt->error;
+                }
+                foreach ($this->roles as $role) {
+                    echo $role;
+                    echo $this->employee_id;
+                    
+                    $stmtRole = $this->dbHandler->con->prepare("INSERT INTO `employee_role`(`employee_id`, `role_id`) VALUES (?,?)");
+                    $stmtRole->bind_param("ss", $this->employee_id, $role);
+                    if($stmtRole->execute()){
+                        $stmtRole->store_result();
+                        $this->results['mode'] = "new";
+                        $this->results['status'] = "success";
+                        $this->results['message'] = "New Employee inserted successfully.";
+                    } else {
+                        $this->results['mode'] = "new";
+                        $this->results['status'] = "error";
+                        $this->results['message'] = $stmtRole->error;
+                    }
                 }
             } 
         } 

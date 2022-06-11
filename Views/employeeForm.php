@@ -49,7 +49,7 @@ $roles = $role->get_all();
                 $roleName = $role['role_name'];
                 $roleId = $role['id'];
                 echo "<div class=\"form-check form-check-inline pt-2\">";
-                echo "<input class=\"form-check-input\" type=\"checkbox\" value= $roleId name=\"employee_role\">";
+                echo "<input class=\"form-check-input\" type=\"checkbox\" value= $roleId name=\"employee_role[]\">";
                 echo "<label class=\"form-check-label\">".ucfirst($roleName)."</label>";
                 echo "</div>";
             }

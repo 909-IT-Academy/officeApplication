@@ -85,10 +85,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $errors['message'][]  = "Role Field is Required";
   } else {
     //$employee_role = $employee->dbHandler->sanitize($_POST["employee_role"]);
-    $employee_role[] = $_POST["employee_role"];
+    $employee_role = $_POST["employee_role"];
     $employee->set_roles($employee_role); 
-    var_dump($employee_role);
-    die();  
   }
 
   // submit the form
@@ -99,7 +97,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $employee_mobile = $_POST["employee_mobile"];    
     $employee_address = $_POST["employee_address"];    
     $employee_email = $_POST["employee_email"];
-    $employee_role = $employeee_role;
+    $employee_role = $employee_role;
 
     $employee = new Employee(null,$employee_id, $employee_first_name, $employee_last_name, $employee_mobile, $employee_address, $employee_email, $employee_role);
     $results = $employee->save();
