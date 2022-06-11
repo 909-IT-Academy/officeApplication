@@ -104,11 +104,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     $_SESSION['response'] = $results;
     
-    if($results['status'] == "success") {
-      $employee = new Employee();
-      $mode = $employee->set_mode("new");
-      $employee->set_employee_id($employee->uniqidReal());
-    }
+    // Reset the form
+    $employee = new Employee();
+    $mode = $employee->set_mode("new");
+    $employee->set_employee_id($employee->uniqidReal());
 
   }
 }
