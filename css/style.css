@@ -4,6 +4,10 @@
   src: url(../fonts/FontsFree-Net-CircularStd-Bold.ttf);
 }
 
+.w-80{
+  width: 80%;
+}
+
 .error{
   color:red;
   font-size: 15px;
