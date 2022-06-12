@@ -11,25 +11,6 @@ $roles = $role->get_all();
 
 
 ?>
-<<<<<<< HEAD
-
-  <div class="row">
-  <?php include('views/messageDiv.php'); ?>
-  </div>
-  <div class="row">
-    <div class="col-md-6 col-md-2-offset">
-    <div class="row">
-      <form action="" method="post">
-          <div class="mb-3">
-            <label for="mode" class="form-label">Mode</label>
-            <input type="text" class="form-control" name="mode" value="<?php echo $mode; ?>">
-          </div>
-          <div class="mb-3">
-            <label for="employee_id" class="form-label">Id</label>
-            <input type="text" class="form-control" name="employee_id" value="<?php echo $employee_id; ?>">
-          </div>
-          <div class="mb-3">
-=======
 <div class="row">
     <form action="" method="post" class="row g-3 mt-2 p-4">
         <h4 class="pb-2"> NEW EMPLOYEE FORM </h4>        
@@ -42,7 +23,6 @@ $roles = $role->get_all();
             <input type="text" class="form-control" name="employee_id" value="<?php echo $employee_id;?>" readonly>
         </div>
         <div class="col-md-6">
->>>>>>> 0220839770c7b15bc9a405c68d21ff1bd348cb18
             <label class="form-label">First Name</label>
             <input type="text" class="form-control" name="employee_first_name" placeholder="First Name" value="<?php echo $employee_first_name; ?>">
         </div>
@@ -61,21 +41,6 @@ $roles = $role->get_all();
         <div class="col-md-6">
             <label class="form-label">Phone Number</label>
             <input type="tel" class="form-control" name="employee_mobile" placeholder="Mobile" value="<?php echo $employee_mobile; ?>">
-<<<<<<< HEAD
-          </div>
-          <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="Admin" value="User">
-            <label class="form-check-label" for="Admin">Admin</label>
-            <input type="checkbox" class="form-check-input" id="User" value="User">
-            <label class="form-check-label" for="User">User</label>
-          </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
-      </div>
-      </form>
-    </div>
-  </div>
-</div>
-=======
         </div>        
         <div class="col-md-12">
         <strong> Choose your role </strong> </br>
@@ -95,4 +60,3 @@ $roles = $role->get_all();
         </div>
     </form>
 </div>
->>>>>>> 0220839770c7b15bc9a405c68d21ff1bd348cb18

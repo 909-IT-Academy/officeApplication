@@ -18,12 +18,6 @@
 <body>
 
     <?php include('views/navbar.php') ?>
-<<<<<<< HEAD
-    <div class="container">
-    <?php include('views/employeeForm.php') ?>
-    </div>
-    <?php include('views/footer.php') ?>
-=======
 
 
     <div class="container">
@@ -36,6 +30,5 @@
             </div>            
         </div>
     </div>
->>>>>>> 0220839770c7b15bc9a405c68d21ff1bd348cb18
 </body>
 </html>

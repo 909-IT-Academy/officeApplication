@@ -151,16 +151,8 @@ class Employee {
                     }
                 }
             } 
-<<<<<<< HEAD
-            
-
-
-        } 
-        
-=======
         } 
         return $this->results;
->>>>>>> 0220839770c7b15bc9a405c68d21ff1bd348cb18
     }
 
     // get all the records from the employee table

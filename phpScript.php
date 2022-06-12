@@ -108,19 +108,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $mode = $employee->set_mode("new");
     $employee->set_employee_id($employee->uniqidReal());
 
-<<<<<<< HEAD
-    $employee = new Employee(null, $employee_first_name, $employee_last_name, $employee_mobile, $employee_address, $employee_email);
-    $employee->save();
-    
-    $employee_id = "";    
-         $employee_first_name = "";    
-            $employee_last_name = "";    
-            $employee_mobile = "";    
-            $employee_address = "";    
-            $employee_email = ""; 
-
-=======
->>>>>>> 0220839770c7b15bc9a405c68d21ff1bd348cb18
   }
 }
 ?>
