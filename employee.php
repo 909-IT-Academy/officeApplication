@@ -28,6 +28,9 @@
             <div class="p-2 bd-highlight w-80">
                 <?php include('views/employeeForm.php'); ?>
             </div>            
+            <div class="p-2 bd-highlight w-80">
+                <?php include('views/employeeTable.php'); ?>
+            </div>            
         </div>
     </div>
 </body>

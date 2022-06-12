@@ -94,9 +94,9 @@ class Employee {
         return $this->email;
     }
 
-    // public function get_mode(){
-    //     return $this->mode;
-    // }
+    public function get_mode(){
+        return $this->mode;
+    }
 
     public function get_roles(){
         return $this->roles;
