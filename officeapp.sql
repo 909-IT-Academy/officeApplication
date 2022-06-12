@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 05, 2022 at 02:42 AM
+-- Generation Time: Jun 12, 2022 at 01:52 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.0.13
 
@@ -29,6 +29,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `employee` (
   `id` int(11) NOT NULL,
+  `uid` varchar(255) NOT NULL,
   `fname` varchar(255) NOT NULL,
   `lname` varchar(255) NOT NULL,
   `mobile` varchar(255) NOT NULL,
@@ -40,10 +41,9 @@ CREATE TABLE `employee` (
 -- Dumping data for table `employee`
 --
 
-INSERT INTO `employee` (`id`, `fname`, `lname`, `mobile`, `address`, `email`) VALUES
-(1, 'Ashish', 'Gurung', '0451570617', 'Campsie, Nsw, Australia', 'atsamdev@gmail.com'),
-(2, 'Nabin', 'Karki', '0451530705', 'Strathfeild, Nsw, Australia', '429nabin@gmail.com'),
-(3, 'Nishan', 'Shrestha', '433879456', 'Hurstville Nsw Australia', 'nishan@gmail.com');
+INSERT INTO `employee` (`id`, `uid`, `fname`, `lname`, `mobile`, `address`, `email`) VALUES
+(145, 'ed8cccb833ba3', 'Sumitra', ' Parajuli', '+61410602162', 'UNIT 8, 1-3 HAMILTON STREET', 'sumuparajuli@gmail.com'),
+(146, 'b8b09676a05e0', 'Sumitra Parajuli', 'ttt', '+61410602162', 'UNIT 8, 1-3 HAMILTON STREET', 'sumuparajuli@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -52,7 +52,7 @@ INSERT INTO `employee` (`id`, `fname`, `lname`, `mobile`, `address`, `email`) VA
 --
 
 CREATE TABLE `employee_role` (
-  `employee_id` int(11) NOT NULL,
+  `employee_id` varchar(255) NOT NULL,
   `role_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -61,10 +61,9 @@ CREATE TABLE `employee_role` (
 --
 
 INSERT INTO `employee_role` (`employee_id`, `role_id`) VALUES
-(1, 1),
-(1, 2),
-(2, 1),
-(3, 2);
+('ed8cccb833ba3', 1),
+('ed8cccb833ba3', 3),
+('b8b09676a05e0', 1);
 
 -- --------------------------------------------------------
 
@@ -83,7 +82,8 @@ CREATE TABLE `role` (
 
 INSERT INTO `role` (`id`, `role_name`) VALUES
 (1, 'admin'),
-(2, 'user');
+(2, 'user'),
+(3, 'account');
 
 --
 -- Indexes for dumped tables
@@ -94,7 +94,7 @@ INSERT INTO `role` (`id`, `role_name`) VALUES
 --
 ALTER TABLE `employee`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `idx_lname` (`lname`);
+  ADD UNIQUE KEY `uid` (`uid`);
 
 --
 -- Indexes for table `employee_role`
@@ -116,13 +116,13 @@ ALTER TABLE `role`
 -- AUTO_INCREMENT for table `employee`
 --
 ALTER TABLE `employee`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=147;
 
 --
 -- AUTO_INCREMENT for table `role`
 --
 ALTER TABLE `role`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Constraints for dumped tables

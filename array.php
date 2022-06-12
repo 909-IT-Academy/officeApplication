@@ -4,8 +4,7 @@ $results = [];
 $results['status'] = "success";
 $results['message'] = "Db Connection successfull";
 
-var_dump($results);
-
+echo "</br>";
 echo "<pre>";
 var_dump($results);
 echo "</pre>";
@@ -48,5 +47,17 @@ if (!empty($array1)) {
     echo "</ul>";
     echo "</div>";
   }
+
+
+  $results = json_encode($results);
+  echo "</br>";
+  echo "<pre>";
+  var_dump($results);
+  echo "</pre>";
+  $results = json_decode($results);
+  echo "</br>";
+  echo "<pre>";
+  var_dump($results);
+  echo "</pre>";
 
 ?>
