@@ -8,8 +8,6 @@ $employee_address = $employee->get_address();
 $employee_email = $employee->get_email();
 $mode = $employee->get_mode();
 $roles = $role->get_all();
-
-
 ?>
 <div class="row">
     <form action="" method="post" class="row g-3 mt-2 p-4">

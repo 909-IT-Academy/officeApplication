@@ -2,7 +2,7 @@
 namespace officeApp\Model;
 
 use officeApp\Database\DbHandler;
-// include('Database/DbHandler.php');
+use Exception;
 
 class Employee {
     private $id;
@@ -13,8 +13,10 @@ class Employee {
     private $address;
     private $email;
     private $roles = [];
+    private $table_name;
     public $dbHandler;
     public $results = [];
+    
 
     public function __construct($id = "", $employee_id = "", $fname = "", $lname="", $mobile = "", $address = "", $email = "", $roles = [])
     {
@@ -26,6 +28,7 @@ class Employee {
         $this->address = $address;
         $this->email = $email;
         $this->roles = $roles;
+        $this->table_name = "employee";
         $this->dbHandler = new DbHandler();
         $this->results = [];
     }
@@ -127,29 +130,31 @@ class Employee {
                     $this->results['mode'] = "new";
                     $this->results['status'] = "success";
                     $this->results['message'] = "New Employee Data inserted successfully.";
-                    $stmt->store_result();                    
+                    $stmt->store_result();
+                    
+                    // move this code to Model Role
+                    foreach ($this->roles as $role) {                    
+                        $stmtRole = $this->dbHandler->con->prepare("INSERT INTO `employee_role`(`employee_id`, `role_id`) VALUES (?,?)");
+                        $stmtRole->bind_param("ss", $this->employee_id, $role);
+                        if($stmtRole->execute()){
+                            $stmtRole->store_result();
+                            $this->results['mode'] = "new";
+                            $this->results['status'] = "success";
+                            $this->results['message'] = "New Employee inserted successfully.";
+                        } else {
+                            $this->results['mode'] = "new";
+                            $this->results['status'] = "error";
+                            $this->results['message'] = $stmtRole->error;
+                        }
+                    }
+                    
+
                 }else{ // false
                     $this->results['mode'] = "new";
                     $this->results['status'] = "error";
                     $this->results['message'][]  = $stmt->error;
                 }
-                foreach ($this->roles as $role) {
-                    echo $role;
-                    echo $this->employee_id;
-                    
-                    $stmtRole = $this->dbHandler->con->prepare("INSERT INTO `employee_role`(`employee_id`, `role_id`) VALUES (?,?)");
-                    $stmtRole->bind_param("ss", $this->employee_id, $role);
-                    if($stmtRole->execute()){
-                        $stmtRole->store_result();
-                        $this->results['mode'] = "new";
-                        $this->results['status'] = "success";
-                        $this->results['message'] = "New Employee inserted successfully.";
-                    } else {
-                        $this->results['mode'] = "new";
-                        $this->results['status'] = "error";
-                        $this->results['message'] = $stmtRole->error;
-                    }
-                }
+
             } 
         } 
         return $this->results;
@@ -157,12 +162,15 @@ class Employee {
 
     // get all the records from the employee table
     public function getAll(){
-
+        $sqlQuery = "SELECT * FROM ".$this->table_name;
+        $results = $this->dbHandler->getresults($sqlQuery);
+        $this->results = $results;
+        return $this->results;
     }
 
     // get the record for the id
     public function get_from_id(){
-
+        
     }
 
     public function uniqidReal($lenght = 13) {

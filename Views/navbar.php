@@ -14,8 +14,14 @@
                     <li class="nav-item">
                         <a class="nav-link" href="roles.php">Roles</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="employee.php">Employees</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Employees
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="employee.php">Add Employee</a></li>
+                            <li><a class="dropdown-item" href="employeeView.php">View Employees</a></li>
+                        </ul>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="clients.php">Clients</a>
