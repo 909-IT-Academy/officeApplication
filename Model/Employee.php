@@ -16,13 +16,8 @@ class Employee {
     public $dbHandler;
     public $results = [];
 
-<<<<<<< HEAD
-    public function __construct($id = "", $fname = "", $lname="", $mobile = "", $address = "", $email = "")
-   {
-=======
     public function __construct($id = "", $employee_id = "", $fname = "", $lname="", $mobile = "", $address = "", $email = "", $roles = [])
     {
->>>>>>> 0220839770c7b15bc9a405c68d21ff1bd348cb18
         $this->id = $id;
         $this->employee_id = $employee_id;
         $this->fname = $fname;

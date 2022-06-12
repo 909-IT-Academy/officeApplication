@@ -19,16 +19,6 @@
 
     <?php include('views/navbar.php') ?>
 
-<<<<<<< HEAD
-<div class="container w-50 border border-2 mt-5 ">
-<?php include('views/employeeForm.php') ?>
-</div>
-<div class="container mt-3">
-<?php include('views/employeeTable.php') ?>
-</div>
-    
-    <?php include('views/footer.php') ?>
-=======
 
     <div class="container">
         <div class="d-flex flex-column bd-highlight justify-content-center align-items-center mb-3" style="min-height:100vh">
@@ -40,6 +30,5 @@
             </div>            
         </div>
     </div>
->>>>>>> 0220839770c7b15bc9a405c68d21ff1bd348cb18
 </body>
 </html>

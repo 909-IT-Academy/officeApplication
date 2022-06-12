@@ -8,14 +8,10 @@ include('Model/Employee.php');
 include('Model/Role.php');
 
 $employee = new Employee();
-<<<<<<< HEAD
-// $mode = $employee->set_mode("new");
-=======
 $mode = $employee->set_mode("new");
 $employee->set_employee_id($employee->uniqidReal());
 
 $role = new Role();
->>>>>>> 0220839770c7b15bc9a405c68d21ff1bd348cb18
 
 $errors = [];
 
