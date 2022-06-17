@@ -100,13 +100,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $employee = new Employee(null,$employee_id, $employee_first_name, $employee_last_name, $employee_mobile, $employee_address, $employee_email, $employee_role);
     $results = $employee->save();
-    
+        
     $_SESSION['response'] = $results;
     
     // Reset the form
     $employee = new Employee();
     $mode = $employee->set_mode("new");
     $employee->set_employee_id($employee->uniqidReal());
+
+    //Redirect to view if no errors
+    if($results['status'] == "success"){
+      header("Location: employeeView.php");
+      exit;
+    }
 
   }
 }

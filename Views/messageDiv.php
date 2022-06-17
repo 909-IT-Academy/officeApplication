@@ -10,7 +10,6 @@ if (!empty($errors)) {
         $errors = json_encode($errors);
         // this is in json Object format
         $errors = json_decode($errors);
-        var_dump($errors);
     echo "<div class=\"alert alert-danger\" role=\"alert\">";
     echo "Please fix the following errors:<br/>";
     echo "<ul>";

@@ -10,6 +10,7 @@ class Role {
     public $dbHandler;
     private $results = [];
     private $table;
+    private $table2;
 
     public function __construct($id="", $role_name="")
     {
@@ -17,6 +18,7 @@ class Role {
         $this->role_name = $role_name;
         $this->dbHandler = new DbHandler();
         $this->table = "role";
+        $this->table = "employee_role";
     }
 
     public function get_all(){
@@ -53,6 +55,14 @@ class Role {
             }
         }
         return $this->location;
+    }
+
+    public function get_role_for_employee($uid){
+        $sqlQuery = "SELECT `role.role_name` from `employee_role` JOIN `role` ON `role.id` =$uid";
+                 $results = $this->dbHandler->getresults($sqlQuery);
+                 return $results;
+
+
     }
 }
 ?>
