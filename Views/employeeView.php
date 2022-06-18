@@ -3,20 +3,13 @@
 use officeApp\Model\Role;
 
 $employeesArray = $employee->getAll();
-//var_dump($employeesArray);
 // die();
 
 $employees = json_encode($employeesArray);
 $employees = json_decode($employees);
 if ($employees->status == "success") {
-    foreach ($employeesArray['data'] as $employee) {
-    $roles['uid'] = $role->get_role($employee['uid']);
-   
-    echo "<br>";
-    }
 
-    var_dump($roles);
- 
+
 ?>
 
 
@@ -39,27 +32,39 @@ if ($employees->status == "success") {
             $i = 1;
 
             foreach ($employees->data as $employee) {
+                $id = $employee->id;
                 $uid = $employee->uid;
                 $fullName = $employee->fname . " " . $employee->lname;
                 $fullName = ucfirst($fullName);
                 $phoneNumber = $employee->mobile;
                 $address = $employee->address;
                 $email = $employee->email;
+                $roles = $role->get_role($uid);
             
-        
-               
+
                 echo "<tr>";
                 echo "<th scope=\"row\"> $i </th>";
                 echo "<td>$uid</td>";
                 echo "<td>$fullName</td>";
                 echo "<td>$phoneNumber</td>";
                 echo "<td>$address</td>";
-                echo "<td>"; 
+                echo "<td>";
             ?>
                 <?php
+
+
                 
-               
-                
+
+              
+
+                foreach($roles['data'] as $roles){
+                  
+                    echo "<li>". $roles['role_name']. "</li>";
+                }
+              
+
+
+
 
                 ?>
 
