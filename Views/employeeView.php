@@ -60,10 +60,6 @@ if ($employees->status == "success") {
                 
                
                 
-                foreach ($roles->data as $role){
-                    $role_name = $role->role_name;
-                    echo "<li>". $role_name ."</li>";
-                }
 
                 ?>
 
