@@ -1,22 +1,23 @@
-<?php 
+<?php
 namespace officeApp;
+
 session_start();
 
 use officeApp\Model\Employee;
 use officeApp\Model\Role;
+
 include('Model/Employee.php');
 include('Model/Role.php');
 
 $employee = new Employee();
-$mode = $employee->set_mode("new");
+$mode = $employee->set_mode("edit");
 $mode = $employee->get_mode();
-$employee->set_employee_id($employee->uniqidReal());
-
 $role = new Role();
-include('phpScript.php') 
+include('phpScript.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -29,13 +30,12 @@ include('phpScript.php')
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="lib/jquery.form.js"></script>
     <script src="dist/jquery.validate.js"></script>
-    <script src="https://kit.fontawesome.com/70c966dfe1.js" crossorigin="anonymous"></script>    
+    <script src="https://kit.fontawesome.com/70c966dfe1.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
 
     <?php include('views/navbar.php') ?>
-
-
     <div class="container">
         <div class="d-flex flex-column bd-highlight justify-content-center align-items-center mb-3" style="min-height:100vh">
             <div class="p-2 bd-highlight w-80">
@@ -43,8 +43,9 @@ include('phpScript.php')
             </div>
             <div class="p-2 bd-highlight w-80">
                 <?php include('views/employeeForm.php'); ?>
-            </div>            
+            </div>
         </div>
     </div>
 </body>
+
 </html>

@@ -38,21 +38,13 @@ class Role {
         return $results;
     }
 
-    public function get_role_name_from_id($id)
-    {
-        $results = $this->check_if_id_exists($id);
-
-        if ($results['status'] == "success") {
-            $sqlQuery = "SELECT `location` FROM ".$this->table. " WHERE `id`=$id Limit 1";
-
-            $results = $this->dbHandler->getresults($sqlQuery);
-            if ($results['status'] == "success") {
-                foreach ($results['data'] as $data) {                    
-                    $this->location = $data['location'];
-                }
-            }
-        }
-        return $this->location;
+    public function get_role_name_from_id($uid)
+    { 
+        // $sqlQuery = "SELECT distinct role_id FROM employee_role WHERE `employee_id`= '$uid'";
+        $sqlQuery= "SELECT role_name FROM role INNER JOIN employee_role ON employee_role.role_id = role.id INNER JOIN employee ON employee.uid=employee_role.employee_id WHERE employee.uid = '" . $uid."'; ";
+        
+        $results = $this->dbHandler->getresults($sqlQuery);
+        return $results;
     }
 }
 ?>

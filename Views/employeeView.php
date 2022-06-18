@@ -2,6 +2,7 @@
 $employees = $employee->getAll();
 $employees = json_encode($employees);
 $employees = json_decode($employees);
+
 if ($employees->status == "success") {
 ?>
 <table class="table table-striped">
@@ -20,26 +21,37 @@ if ($employees->status == "success") {
     </thead>
     <tbody>
         <?php 
-        $i =1;
+        $i =1;        
         
         foreach ($employees->data as $employee) {
+            $id = $employee->id;
             $uid = $employee->uid;   
             $fullName = $employee->fname. " ".$employee->lname;
             $fullName = ucfirst($fullName);
             $phoneNumber = $employee->mobile;
             $address = $employee->address;
-            $email = $employee->email;
+            $email = $employee->email; 
+            $role_names = $role->get_role_name_from_id($uid); 
+            var_dump($role_names);
+        
             echo "<tr>";
                     echo "<th scope=\"row\"> $i </th>";
                     echo "<td>$uid</td>";
                     echo "<td>$fullName</td>";
                     echo "<td>$phoneNumber</td>";
                     echo "<td>$address</td>";
-                    echo "<td></td>";
+                    echo "<td>";
+                    foreach ($role_names['data'] as $role_name) {
+                        echo "<ul>";
+                        echo "<li>".$role_name['role_name']."</li>";
+                        echo "</ul>";
+                    }
+                    echo "</td>";
+
                     echo "<td>$email</td>";
                     echo "<td>";
-                    echo "<i class=\"fa-solid fa-pen\"></i>";
-                    echo "<i class=\"fa-solid fa-trash-can ps-4\"></i>";
+                    echo "<a href=\"edit.php?id=$id\"<i class=\"fa-solid fa-pen\"></i></a>";
+                    echo "<a href=\"delete.php?id=$id\"<i class=\"fa-solid fa-trash-can ps-4\"></i></a>";
                     echo "</td>";
                 echo "</tr>";
                 $i++;

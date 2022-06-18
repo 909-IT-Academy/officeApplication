@@ -1,19 +1,42 @@
 <?php
-namespace officeApp;
-session_start();
-
 use officeApp\Model\Employee;
 use officeApp\Model\Role;
-include('Model/Employee.php');
-include('Model/Role.php');
-
-$employee = new Employee();
-$mode = $employee->set_mode("new");
-$employee->set_employee_id($employee->uniqidReal());
-
-$role = new Role();
 
 $errors = [];
+$response = [];
+
+if($mode == 'edit'){
+    // For edit items only
+    // Add the old data to the json encode
+    $id = isset($_GET['id']) ? $_GET['id'] : "null";
+    $results = $employee->get_all_from_id($id); 
+    if($results['status'] == "success"){
+        $old_id = $employee->get_id();
+        $old_employee_id = $employee->get_employee_id();
+        $old_first_name = $employee->get_fname(); 
+        $old_last_name = $employee->get_lname();
+        $old_address = $employee->get_address();
+        $old_email = $employee->get_email();
+        $old_mobile = $employee->get_mobile(); 
+        $old_roles = $employee->get_roles();   
+    } else {            
+        $errors['mode'] = $results['mode'];
+        $errors['status'] = $results['status'];
+        $errors['message'][] = $results['message'];        
+    }
+}
+
+if($mode == 'delete'){
+    $id = $_GET['id'];
+    $results = $employee->deleteRecord($id);
+    if($results['status'] == "success"){
+        $_SESSION['response'] = $results;
+    } else {
+        $errors['mode'] = $results['mode'];
+        $errors['status'] = $results['status'];
+        $errors['message'][] = $results['message'];
+    }    
+}
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
