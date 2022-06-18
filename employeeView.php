@@ -21,11 +21,11 @@
 
 
     <div class="container">
-        <div class="d-flex flex-column bd-highlight justify-content-center align-items-center mb-3" style="min-height:100vh">
+        <div class="d-flex flex-column bd-highlight mb-3" style="min-height:100vh">
             <div class="p-2 bd-highlight w-80">
                 <?php include('views/messageDiv.php'); ?>
             </div>
-            <div class="p-2 bd-highlight w-80">
+            <div class="p-2 bd-highlight ">
                 <?php include('views/employeeView.php'); ?>
             </div>            
         </div>

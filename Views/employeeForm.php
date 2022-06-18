@@ -1,13 +1,13 @@
 <?php
-$id = $employee->get_id();
-$employee_id = $employee->get_employee_id();
-$employee_first_name = $employee->get_fname();
-$employee_last_name  = $employee->get_lname();
-$employee_mobile = $employee->get_mobile();
-$employee_address = $employee->get_address();
-$employee_email = $employee->get_email();
-$mode = $employee->get_mode();
-$roles = $role->get_all();
+    $id = $employee->get_id();
+    $employee_id = $employee->get_employee_id();
+    $employee_first_name = $employee->get_fname();
+    $employee_last_name  = $employee->get_lname();
+    $employee_mobile = $employee->get_mobile();
+    $employee_address = $employee->get_address();
+    $employee_email = $employee->get_email();
+    $mode = $employee->get_mode();
+    $roles = $role->get_all();
 ?>
 <div class="row">
     <form action="" method="post" class="row g-3 mt-2 p-4">
@@ -45,12 +45,13 @@ $roles = $role->get_all();
         <?php
             foreach ($roles['data'] as $role) {
                 $roleName = $role['role_name'];
-                $roleId = $role['id'];
-                echo "<div class=\"form-check form-check-inline pt-2\">";
-                echo "<input class=\"form-check-input\" type=\"checkbox\" value= $roleId name=\"employee_role[]\">";
-                echo "<label class=\"form-check-label\">".ucfirst($roleName)."</label>";
-                echo "</div>";
-            }
+                $roleId = $role['id'];?>
+               <div class="form-check form-check-inline pt-2">
+               <input class="form-check-input" type="checkbox" value= $roleId name="employee_role[]">
+               <label class="form-check-label"><? echo ucfirst($roleName) ?></label>
+               </div>
+            <?php }
+
         ?>
         </div>
         <div class="col-md-12">

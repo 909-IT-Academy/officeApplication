@@ -168,6 +168,14 @@ class Employee {
         return $this->results;
     }
 
+    //get role form database
+    public function get_role($id){
+        $sqlQuery= "SELECT distinct `role_id` FROM `employee_role` WHERE employee_id =$id";
+        $results = $this->dbHandler->getresults($sqlQuery);
+        $this->results = $results;
+        return $this->results;
+    }
+
     // get the record for the id
     public function get_from_id(){
         
