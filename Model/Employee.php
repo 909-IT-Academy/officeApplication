@@ -108,6 +108,14 @@ class Employee {
     // save the data to the employee table
     public function save($id="null")
     {
+        // if($this->mode == "new"){
+
+        // }
+
+        // if($this->mode == "edit"){
+
+        // }       
+        
         // check if db connection is established
         // assign sanitized form values to the fields
         if($this->dbHandler->results['status'] == "success"){ 
@@ -160,17 +168,46 @@ class Employee {
         return $this->results;
     }
 
+    public function check_if_id_exists($id)    {
+        
+        $results = $this->dbHandler->check_id($id, $this->table_name);
+        return $results;
+    }
+
     // get all the records from the employee table
     public function getAll(){
         $sqlQuery = "SELECT * FROM ".$this->table_name;
         $results = $this->dbHandler->getresults($sqlQuery);
-        $this->results = $results;
+        $this->results = $results;        
         return $this->results;
     }
 
     // get the record for the id
-    public function get_from_id(){
+    public function get_all_from_id($id){
+
+        $results = $this->check_if_id_exists($id);
+
+        if ($results['status'] == "success") {
+        $sqlQuery = "SELECT `id`, `uid`, `fname`, `lname`, `mobile`, `address`, `email` FROM ".$this->table_name." WHERE `id`=".$id;
+        $results = $this->dbHandler->getresults($sqlQuery);
+        if ($results['status'] == "success") {
+            foreach ($results['data'] as $data) {
+                $this->id = $data['id'];
+                $this->employee_id = $data['uid'];                
+                $this->fname = $data['fname']; 
+                $this->lname = $data['lname'];
+                $this->mobile = $data['mobile'];
+                $this->address = $data['address'];
+                $this->email = $data['email']; 
+            }
+        }
+
+        }
+        return $results;
+
+ 
         
+
     }
 
     public function uniqidReal($lenght = 13) {

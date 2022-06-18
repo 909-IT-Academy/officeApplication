@@ -1,4 +1,3 @@
-<?php include('phpScript.php') ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +12,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="lib/jquery.form.js"></script>
     <script src="dist/jquery.validate.js"></script>
-    <script src="https://kit.fontawesome.com/70c966dfe1.js" crossorigin="anonymous"></script>    
+    <script src="https://kit.fontawesome.com/70c966dfe1.js" crossorigin="anonymous"></script>  
+    <script src="js/timesheet.js"></script>  
 </head>
 <body>
     <?php include('views/navbar.php') ?>

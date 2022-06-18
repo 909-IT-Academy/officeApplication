@@ -128,4 +128,3 @@ class DbHandler
         return $this->results;
     }
 }
-?>
