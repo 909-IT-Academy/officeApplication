@@ -43,7 +43,7 @@ echo "<i>Fname lname&nbsp(</i>" . $_SESSION["roleValue"] . ").";
                             Employees
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="employee.php">Add Employee</a></li>
+                            <li><a class="dropdown-item" href="./employee.php">Add Employee</a></li>
                             <li><a class="dropdown-item" href="employeeView.php">View Employees</a></li>
                         </ul>
                     </li>

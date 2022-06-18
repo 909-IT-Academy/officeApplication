@@ -1,6 +1,6 @@
 <?php
 $employees = $employee->getAll();
-$roles = $role->get_role_for_employee();
+// $roles = $role->get_role_for_employee();
 $employees = json_encode($employees);
 $employees = json_decode($employees);
 if ($employees->status == "success") {
@@ -39,8 +39,8 @@ if ($employees->status == "success") {
                     echo "<td>$fullName</td>";
                     echo "<td>$phoneNumber</td>";
                     echo "<td>$address</td>";
-                    echo "<td>".$roles($uid) ."</td>";
-                    echo "<td>$email</td>";
+                    // echo "<td>".$roles($uid) ."</td>";
+                     echo "<td>$email</td>";
                     echo "<td>";
                     echo "<i class=\"fa-solid fa-pen\"></i>";
                     echo "<i class=\"fa-solid fa-trash-can ps-4\"></i>";

@@ -57,12 +57,12 @@ class Role {
         return $this->location;
     }
 
-    public function get_role_for_employee($uid){
-        $sqlQuery = "SELECT `role.role_name` from `employee_role` JOIN `role` ON `role.id` =$uid";
-                 $results = $this->dbHandler->getresults($sqlQuery);
-                 return $results;
+    // public function get_role_for_employee($uid){
+    //     $sqlQuery = "SELECT `role.role_name` from `employee_role` JOIN `role` ON `role.id` =$uid";
+    //              $results = $this->dbHandler->getresults($sqlQuery);
+    //              return $results;
 
 
-    }
+    // }
 }
 ?>
