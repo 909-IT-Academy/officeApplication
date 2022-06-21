@@ -16,9 +16,10 @@
     <script src="https://kit.fontawesome.com/70c966dfe1.js" crossorigin="anonymous"></script>    
 </head>
 <body>
-    <div class="container">
-        <?php include('views/navbar.php') ?>
+<?php include('views/navbar.php') ?>
+        <div class="container">
         <?php include('views/timesheet.php') ?>
     </div>
+    <?php include('views/footer.php') ?>
 </body>
 </html>
