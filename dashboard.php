@@ -1,4 +1,13 @@
-<?php include('phpScript.php') ?>
+<?php 
+namespace officeApp;
+use officeApp\Model\Employee;
+use officeApp\Model\Role;
+include('Model/Employee.php');
+include('Model/Role.php');
+$employee = new Employee();
+
+$role = new Role();
+include('phpScript.php') ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,6 +25,7 @@
     <script src="https://kit.fontawesome.com/70c966dfe1.js" crossorigin="anonymous"></script>    
 </head>
 <body>
+
 <?php include('views/navbar.php') ?>
     <div class="container">
     <?php include('views/dashboard.php') ?>

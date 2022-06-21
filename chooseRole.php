@@ -1,7 +1,19 @@
 <?php
+namespace officeApp;
+use officeApp\Model\Role;
+include('Model/Role.php');
+
+$role = new Role();
+
+
+$roles = $role->get_all();
+
+?>
+<?php
 // Start the session  dd
 session_start();
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -26,38 +38,44 @@ session_start();
     <div class="container">
 
         <div class="row" style="min-height:100vh">
-           
-                <div class="d-flex flex-column justify-content-center align-items-center">
-                    <div class="row d-flex flex-row justify-content-center align-items-center ">
-                        <img src="img/icon.png" style=" height:70px; width:75px"><br>
-                        <p style="text-align: center;">Please select your Role:</p>
-                    </div>
 
-                    <div class="row justify-content-center align-items-center ">
-                        <form action="dashboard.php" method="POST">
-
-                            <div class="row ">
-                                <select name="role" id="role" onchange="changeFunc();">
-                                    <option value="" disabled selected>Choose option</option>
-                                    <option value="Admin">Admin</option>
-                                    <option value="Account">Account</option>
-                                    <option value="User">User</option>
-                                </select>
-
-                            </div>
-                            <div class="row mt-3 ">
-                                <input type="submit" name="submit" id="ii" value="SUBMIT">
-
-                            </div>
-                           
-                        
-                        </form>
-                        
-
-                    </div>
+            <div class="d-flex flex-column justify-content-center align-items-center">
+                <div class="row d-flex flex-row justify-content-center align-items-center ">
+                    <img src="img/icon.png" style=" height:70px; width:75px"><br>
+                    <p style="text-align: center;">Please select your Role:</p>
                 </div>
 
-            
+                <div class="row justify-content-center align-items-center ">
+                    <form action="dashboard.php" method="POST">
+
+                        
+                        <div class="row ">
+                        <select name="role" id="role" onchange="changeFunc();">
+                                <option value="" disabled selected>Choose option</option>
+                            <?php
+                            foreach ($roles['data'] as $role) {
+                                $roleName = $role['role_name'];
+                                
+                                echo "<option value=".ucfirst($roleName).">".ucfirst($roleName)."</option>";
+                               
+                            }
+                            ?>
+                               </select>
+
+                        </div>
+                        <div class="row mt-3 ">
+                            <input type="submit" name="submit" id="ii" value="SUBMIT">
+
+                        </div>
+
+
+                    </form>
+
+
+                </div>
+            </div>
+
+
         </div>
 
 

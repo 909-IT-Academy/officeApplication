@@ -6,7 +6,6 @@
 
 </style>
 
-
 <?php
 if (isset($_POST['submit'])) {
     if (!empty($_POST['role'])) {
@@ -15,7 +14,10 @@ if (isset($_POST['submit'])) {
         $_SESSION["roleValue"] = $selected;
     }
 }
+
+
 ?> 
+
 <div class="container-fluid d-flex justify-content-end">
 <?php
 // Echo session variables that were set on previous page

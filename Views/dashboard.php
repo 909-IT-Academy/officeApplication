@@ -26,42 +26,54 @@
                 <th>Department</th>
                 <th>Extension</th>
             </tr>
+
             <?php
+            $employees = $employee->getAll();
+            $employees = json_encode($employees);
+            $employees = json_decode($employees);
 
-            $servername = "localhost";
-            $username = "root";
-            $password = "";
-            $databasename = "officeapp";
+            if ($employees->status == "success") {
+                $i =1; 
+                foreach ($employees->data as $employee) {
+                    $fullName = $employee->fname. " ".$employee->lname;
+                    $fullName = ucfirst($fullName);
 
-            // CREATE CONNECTION
-            $conn = new mysqli(
-                $servername,
-                $username,
-                $password,
-                $databasename
-            );
+                    $uid = $employee->uid; 
 
-            if ($conn->connect_error) {
-                die("Connection failed: " . $conn->connect_error);
-            }
+                    $role_names = $role->get_role_name_from_id($uid);
 
-            $query = "SELECT * FROM `employee`;";
+                    echo "<tr> <td>".$uid."</td>";
+                    echo "<td>".$fullName."&nbsp";
+                    echo "(";
+                    $c=1;
+                   
+                     foreach ($role_names['data'] as $role_name) {
+                       
+                        // var_dump($role_names['data']);
+                       if ($c==count($role_names['data'])){
+                        $operator = "";
+                       }
+                       else {
+                        $operator = ",";
+                       }
+                       echo ucfirst($role_name['role_name']).$operator;
+                       $c += 1;
+                      
+                    }
+                    echo ")";
+                    echo "<td></td>";
+                    echo "<td></td>";
+                    echo "<td></td>";
+                    
 
-            $result = $conn->query($query);
-
-            if ($result->num_rows > 0) {
-                // OUTPUT DATA OF EACH ROW
-                while ($row = $result->fetch_assoc()) {
-                    echo
-                    "<tr><td> " . $row["id"] . "</td><td>" .
-                        $row["fname"] . "&nbsp" .  $row["lname"] . "</td>" .
-                        "<td></td>" . "<td></td>" . "<td></td></tr>";
                 }
-            } else {
-                echo "0 results";
+
             }
 
-            ?>
+
+             ?>
+
+            
         </table>
     </div>
 </div>
